@@ -7,7 +7,7 @@ python twine upload dist/* -u __token__ -p {token}
 
 # Usage of simple sending
 ```shell
-python -m xethhung12_tg_msg_send \
+python -m xethhung12_tg_msg \
     --receiver-id {receiver-id} \
     --bot-token {bot-token} \
     --msg {message} 
@@ -15,7 +15,7 @@ python -m xethhung12_tg_msg_send \
 
 # Usage  of sending through STDIN
 ```shell
-python -m xethhung12_tg_msg_send \
+python -m xethhung12_tg_msg \
     --receiver-id {receiver-id} \
     --bot-token {bot-token} \
     --from-stdin {stdin input} 

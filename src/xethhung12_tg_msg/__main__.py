@@ -1,7 +1,7 @@
 import argparse
 import sys
 
-from xethhung12_tg_msg_send import send
+from xethhung12_tg_msg import send
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(
