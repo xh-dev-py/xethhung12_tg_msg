@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "xethhung12_tg_msg"
-version = "0.0.3"
+version = "0.0.4"
 description = "A small program for sending telegram message in quick"
 readme = "README.md"
 requires-python = ">=3.7"

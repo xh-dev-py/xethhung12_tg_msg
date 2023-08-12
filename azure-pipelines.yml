@@ -14,7 +14,7 @@ pool:
   vmImage: ubuntu-latest
 
 variables:
-  - group: xethhung12_tg_msg
+  - group: xethhung12_tg_msg_send
 
 steps:
 - task: UsePythonVersion@0
