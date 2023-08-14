@@ -18,9 +18,7 @@ permissions:
 
 jobs:
   deploy:
-
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v3
     - name: Set up Python
@@ -33,8 +31,10 @@ jobs:
         pip install -r requirements.txt
     - name: Notification for build detail
       run: |
-        python -m xethhung12_tg_msg --receiver-id ${{ secrets.RECEIVER_ID }} --bot-token ${{ secrets.BOT_TOKEN }} --msg \
-          "build xethhung12_tg_msg start"
+        python -m xethhung12_tg_msg --silent \
+          --receiver-id ${{ secrets.RECEIVER_ID }} \
+          --bot-token ${{ secrets.BOT_TOKEN }} \
+          --msg "build xethhung12_tg_msg start"
 
     - name: Build package
       run: |
@@ -43,7 +43,9 @@ jobs:
     - name: Deploy
       run: |
         python -m twine upload dist/* -u __token__ -p ${{ secrets.TOKEN }}
-    - name: Notification for build detail
+    - name: Notification for build completion
       run: |
-        python -m xethhung12_tg_msg --receiver-id ${{ secrets.RECEIVER_ID }} --bot-token ${{ secrets.BOT_TOKEN }} --msg \
-          "build xethhung12_tg_msg done"
+        python -m xethhung12_tg_msg --silent \
+          --receiver-id ${{ secrets.RECEIVER_ID }} \
+          --bot-token ${{ secrets.BOT_TOKEN }} \
+          --msg "build xethhung12_tg_msg done"
